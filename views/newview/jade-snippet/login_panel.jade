@@ -1,0 +1,62 @@
+//
+   Created by Qiushuo on 4/20/2016.
+
+section.fullpage_cover
+    .dialog
+        .head
+            a.close_dialog
+                .fa.fa-times
+        //.head
+        .dialog-body
+            input.login(type = "checkbox")#widget_type
+            label(for="widget_type")#type_label
+                #label-back(data-checked="Sign up" data-unchecked = "Sign in")
+            //a.widget-select.current Sign up
+            //a.widget-select Sign in
+            .input-widget
+                #signin-widget
+                    p username/email
+                    .input_back
+                        .input_head
+                            i.fa.fa-user
+                            p /
+                            i.fa.fa-envelope
+                        input.login(type="text" data-bind = "value: _identity_info")#login
+                    p password
+                    .input_back
+                        .input_head
+                            i.fa.fa-key
+                        input.login(type="password", data-bind = "value: _password")#loginpassword
+                    .remember
+                        input.login(type="checkbox")#remember
+                        p remember me
+                    .feed-back
+                        i.fa.fa-exclamation-circle
+                        p.alert No match information in database
+                    .buttons
+                        button.login#commit(data-bind = "click: SignIn") Signin
+                //login widge
+                #signup-widget
+                    p email
+                    .input_back
+                        .input_head
+                            i.fa.fa-envelope
+                        input.login(type="text" data-bind = "value: _email")
+                    p user name
+                    .input_back
+                        .input_head
+                            i.fa.fa-user
+                        input.login(type="text" data-bind = "value: _user_name")
+                    p password
+                    .input_back
+                        .input_head
+                            i.fa.fa-key
+                        input.login(type="password" data-bind = "value: _password")
+                    .warning
+                        i.fa.fa-exclamation-triangle
+                        p user name invalid change one
+                    button.login#Signup(data-bind = "click: Signup") Sign up
+            //input widget
+
+        //dialog body
+    //dialog

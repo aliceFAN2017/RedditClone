@@ -1,0 +1,45 @@
+//
+   Created by Qiushuo on 4/22/2016.
+
+section#main_pade
+    .ultility-bar
+        .container
+            ul.filters
+                li#Hottest.active-filter
+                    a(data-bind = "click: getHottest")
+                        i.fa.fa-fire
+                        p Hottest
+                li#Lastest
+                    a(data-bind = "click: getLatest")
+                        i.fa.fa-clock-o
+                        p Latest
+                li#Replied
+                    a(data-bind = "click: getUser_replied")
+                        i.fa.fa-commenting-o
+                        p Replied
+                li#Recommended
+                    a(data-bind = "click: getRecommended")
+                        i.fa.fa-heart
+                        p Recommended
+            .addThead_widget
+                a.addThread
+                    i.fa.fa-plus
+                .createThread
+                    h3 create new thread
+                    p Title
+                    input(data-bind = "value: _title")
+                    p Content
+                    textarea(data-bind = "value: _content")
+                    button#submit_thread(data-bind = "click: CreateThread") submit
+    .showcase(data-bind = "foreach: _ThreadList")
+        a.showcase-item(data-bind = "attr: { href: _link_address}")
+            .head_up
+                h2(data-bind = "text: _title") something
+                p(data-bind = "text: _submitter") by someone
+            p(data-bind = "text: _content") other
+            .thread-info
+                p(data-bind = "text: _past_time")
+                p likes
+                p(data-bind = "text: _replies")
+                p comments
+                p(data-bind = "text: _comments")
